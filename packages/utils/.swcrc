@@ -1,0 +1,20 @@
+{
+  "sourceMaps": true,
+  "minify": true,
+  "module": {
+    "type": "commonjs"
+  },
+  "jsc": {
+    "target": "es5",
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false
+    },
+    "minify": {
+      "compress": {
+        "unused": true
+      },
+      "mangle": true
+    }
+  }
+}

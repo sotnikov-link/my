@@ -2,7 +2,17 @@
   "name": "@my/utils",
   "packageManager": "yarn@3.1.1",
   "source": "src/index.ts",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dist": "yarn dist-types && yarn dist-es5cjs",
+    "dist-es5cjs": "swc ./src/ --out-dir ./dist/",
+    "dist-types": "tsc",
+    "clear": "rm -rf dist tsconfig.json.tsbuildinfo"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.53",
+    "@swc/core": "^1.2.119",
+    "typescript": "^4.5.3"
+  }
 }
